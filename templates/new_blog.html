@@ -1,0 +1,25 @@
+    
+{% extends 'base.html' %}
+
+{% block content %}    
+<style>
+    .error {color:red;}
+</style>
+    <h1>Add a Post</h1>
+    <form action="/newpost" method="POST">
+        <label>
+        Title:<br/>
+        <p class="error">{{title_error}}</p>
+        <input class="entry" type="text" name="title" value="{{title}}"> 
+        <br/>
+        </label>
+        <label>
+        What are your thoughts?:<br/>
+        <p class="error">{{body_error}}</p>
+        <textarea class="entry" name="body">{{body}}</textarea>
+        <br/>
+        <input type="submit" value="Add Entry">
+        </label>
+    </form>
+    
+    {% endblock %}

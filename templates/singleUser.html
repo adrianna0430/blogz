@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block content %}
+<h1>{{user.username}}'s Blog Posts</h1>
+
+<ul>
+    {% for entry in userPosts %}
+    <li><a href="./blog?id={{entry.id}}&owner_id={{entry.owner_id}}">
+        <h2>{{entry.title}}</h2>
+    </a>
+    </li>
+    <h1>{{entry.body}}</h1>
+    <h3>written by {{entry.owner.username}}</h3>
+    {% endfor %}
+</ul>
+{% endblock %}

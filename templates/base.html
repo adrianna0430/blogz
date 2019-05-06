@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        body {background-color:#00FFFF};
+    </style>
+<head>
+    <title>{{page_title}}</title>
+</head>
+
+<div>
+    <header>
+        <nav>
+            <a href="/">home</a>
+            <a href="/blog">all posts</a>
+            <a href="/newpost">new post</a>
+            <a href="/login">login</a>
+            <a href="/logout">logout</a>
+        </nav>
+    </header>
+
+    <body>
+        
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        <ul>
+            {% for category,message in messages %}
+            <li class="{{category}}">{{message}}</li>
+            {% endfor %}
+        </ul>
+        {% endwith %} {% block content %} {% endblock %}
+</div>
+
+</html>
+
